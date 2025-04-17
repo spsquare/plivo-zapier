@@ -4,7 +4,8 @@ public class SendEmailAction implements IAction{
     public String getActionName(){
         return "send-mail";
     }
-    ResponseBody runAction(String authDetails, GmailInput input){
+    @Override
+    ResponseBody runAction(AuthContext authDetails, GmailInput input){
         return post("<url-for-mail>",<request-body constructed from input>);
     }
 
